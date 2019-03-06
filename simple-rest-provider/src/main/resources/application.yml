@@ -4,3 +4,8 @@ server:
 spring:
   application:
     name: rest-provider
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
