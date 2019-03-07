@@ -12,6 +12,7 @@
     <module>simple-rest-provider</module>
     <module>simple-rest-consumer</module>
     <module>eureka-server</module>
+    <module>ribbon-server</module>
   </modules>
 
   <name>springcloud-integration</name>
