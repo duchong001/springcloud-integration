@@ -1,9 +1,9 @@
-server:
-  port: 8081
-
 spring:
   application:
-    name: rest-provider
+    name: service-feign
+
+server:
+  port: 8088
 
 eureka:
   client:

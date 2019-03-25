@@ -18,6 +18,7 @@ public class UserController {
 
     @Value("${server.port}")
     private String port;
+
     @GetMapping("/user/{id}")
     private User getUser(@PathVariable("id") Long id){
         System.out.println("port----"+port);
