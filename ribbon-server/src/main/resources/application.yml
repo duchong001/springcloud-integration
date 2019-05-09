@@ -1,10 +1,27 @@
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+
 server:
   port: 8083
 
 spring:
   application:
     name: ribbon-server
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+#eureka 注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+  instance:
+        hostname: localhost
+        #显ip
+        prefer-ip-address: true
+        #eureka 中心显示的服务名
+        instance-id: ${spring.application.name}-${server.port}
+#日志
+logging:
+  file: ribbon-server.log

@@ -4,8 +4,41 @@ server:
 spring:
   application:
     name: rest-provider
-
+ # redis 配置
+  redis:
+      database: 0
+      timeout: 30
+      host: 127.0.0.1
+      port: 6379
+      password: redis
+      pool:
+        max-active: 8
+        max-wait: -1
+        min-idle: 0
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+#eureka 注册中心
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+  instance:
+        hostname: localhost
+        #显ip
+        prefer-ip-address: true
+        #eureka 中心显示的服务名
+        instance-id: ${spring.application.name}-${server.port}
+
+#日志
+logging:
+  file: rest-provider.log
+
+#监控
+info:
+  app.name: rest-provider
+  company.name: www.duchong.cn
+  build.artifactId: rest-provider-${server.port}
+  build.version: 0.0.1-SNAPSHOT

@@ -5,13 +5,31 @@ server:
 #fetchRegistry：false来表明自己是一个eureka server.
 eureka:
   instance:
-    hostname: localhost
+      hostname: localhost
+      prefer-ip-address: true
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka/
+#日志
+logging:
+  file: open-eureka.log
 
+#应用配置
 spring:
   application:
     name: eureka-server
+  #字符编码
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+  #安全认证
+  security:
+      basic:
+        enabled: true
+      user:
+        name: admin
+        password: admin

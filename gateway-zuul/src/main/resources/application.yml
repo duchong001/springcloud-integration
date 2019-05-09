@@ -1,9 +1,9 @@
 server:
-  port: 8082
+  port: 8084
 
 spring:
   application:
-    name: service-feign
+    name: zuul-proxy
   http:
     encoding:
       force: true
@@ -23,4 +23,4 @@ eureka:
         instance-id: ${spring.application.name}-${server.port}
 #日志
 logging:
-  file: service-feign.log
+  file: gateway-zuul.log
