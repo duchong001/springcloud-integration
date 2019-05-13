@@ -1,14 +1,22 @@
 server:
-  port: 8084
+  port: 8085
 
 spring:
   application:
-    name: zuul-proxy
+    name: config-server
   http:
     encoding:
       force: true
       charset: UTF-8
       enabled: true
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/duchong001/spring-cloud-config.git #GitHub上面的git仓库名字
+          #git 仓库的账号密码 私有仓库需要配置
+          #username: ***
+          #password: ***
 
 #eureka 注册中心
 eureka:
@@ -22,12 +30,7 @@ eureka:
         #eureka 中心显示的服务名
         instance-id: ${spring.application.name}-${server.port}
 
-zuul:
-  prefix: /dc #统一的请求前缀
-  ignored-services: rest-provider ## 禁用直接使用微服务 多个用 "*"
-  routes:
-    dc.serviceId : rest-provider
-    dc.path: /provider/**
+
 #日志
 logging:
-  file: gateway-zuul.log
+  file: config-server.log
