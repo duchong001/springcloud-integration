@@ -18,7 +18,7 @@ public class FeignController {
     private FeignService feignService;
 
     @RequestMapping(value = "/user/{id}")
-    public User getUserByFeignService(@PathVariable("id") Long id){
+    public User getUserByFeignService(@PathVariable("id") Long id) {
 
         return feignService.getUserByFeign(id);
     }

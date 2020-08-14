@@ -16,14 +16,14 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8761/eureka/
   instance:
-        hostname: localhost
-        #显ip
-        prefer-ip-address: true
-        #eureka 中心显示的服务名
-        instance-id: ${spring.application.name}-${server.port}
+    hostname: localhost
+    #显ip
+    prefer-ip-address: true
+    #eureka 中心显示的服务名
+    instance-id: ${spring.application.name}-${server.port}
 #日志
 logging:
   file: rest-consumer.log
 
 request:
-    url: http://localhost:8081/user/
+  url: http://localhost:8081/user/

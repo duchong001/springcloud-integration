@@ -27,10 +27,10 @@ public class ClientController {
     private String requestUrl;
 
     @GetMapping("/consumer/{id}")
-    public User getRemoteUser(@PathVariable("id") Long id){
+    public User getRemoteUser(@PathVariable("id") Long id) {
         InstanceInfo info = eurekaClient.getNextServerFromEureka("REST-PROVIDER", false);
         //return restTemplate.getForObject(requestUrl+id,User.class);
         System.out.println(info.getHomePageUrl());
-        return restTemplate.getForObject(info.getHomePageUrl()+"/user/"+id,User.class);
+        return restTemplate.getForObject(info.getHomePageUrl() + "/user/" + id, User.class);
     }
 }

@@ -5,8 +5,8 @@ server:
 #fetchRegistry：false来表明自己是一个eureka server.
 eureka:
   instance:
-      hostname: localhost
-      prefer-ip-address: true
+    hostname: localhost
+    prefer-ip-address: true
   client:
     registerWithEureka: false
     fetchRegistry: false
@@ -30,8 +30,8 @@ spring:
       enabled: true
   #安全认证
   security:
-      basic:
-        enabled: true
-      user:
-        name: admin
-        password: admin
+    basic:
+      enabled: true
+    user:
+      name: admin
+      password: admin

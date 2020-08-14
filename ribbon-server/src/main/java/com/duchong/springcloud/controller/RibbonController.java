@@ -22,9 +22,9 @@ public class RibbonController {
     UserService userService;
 
     @GetMapping("/ribbon/user/{id}")
-    public User getUserByRibbon(@PathVariable("id") Long id){
+    public User getUserByRibbon(@PathVariable("id") Long id) {
 
-        return restTemplate.getForObject("http://rest-provider/user/"+id,User.class);
+        return restTemplate.getForObject("http://rest-provider/user/" + id, User.class);
     }
 
     /**

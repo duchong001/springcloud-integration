@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 /**
  * Spring Boot2.x 中 Spring Security 导致 Eureka 注册失败
+ *
  * @author DUCHONG
  * @since 2019-04-17 19:01
  **/
@@ -18,6 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 禁用默认启用的csrf
+     *
      * @param http
      * @throws Exception
      */

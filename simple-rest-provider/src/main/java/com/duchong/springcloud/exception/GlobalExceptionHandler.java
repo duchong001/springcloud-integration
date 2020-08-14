@@ -17,10 +17,10 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public Map<String,String>handlerException(Exception e){
-        Map<String,String> map=new HashMap<>();
-        map.put("code","1");
-        map.put("msg",e.getMessage());
+    public Map<String, String> handlerException(Exception e) {
+        Map<String, String> map = new HashMap<>();
+        map.put("code", "1");
+        map.put("msg", e.getMessage());
         return map;
     }
 }

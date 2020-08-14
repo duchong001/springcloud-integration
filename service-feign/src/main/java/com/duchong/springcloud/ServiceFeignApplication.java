@@ -7,15 +7,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * Hello world!
- *
  */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class ServiceFeignApplication
-{
-    public static void main( String[] args )
-    {
-        SpringApplication.run(ServiceFeignApplication.class,args);
+public class ServiceFeignApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceFeignApplication.class, args);
     }
 }

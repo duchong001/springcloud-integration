@@ -20,8 +20,8 @@ public class UserController {
     private String port;
 
     @GetMapping("/user/{id}")
-    private User getUser(@PathVariable("id") Long id){
-        System.out.println("port----"+port);
+    private User getUser(@PathVariable("id") Long id) {
+        System.out.println("port----" + port);
         return new User().setId(id).setAge(new Random().nextInt(10)).setName(UUID.randomUUID().toString());
     }
 }

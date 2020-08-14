@@ -16,17 +16,17 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8761/eureka/
   instance:
-        hostname: localhost
-        #显ip
-        prefer-ip-address: true
-        #eureka 中心显示的服务名
-        instance-id: ${spring.application.name}-${server.port}
+    hostname: localhost
+    #显ip
+    prefer-ip-address: true
+    #eureka 中心显示的服务名
+    instance-id: ${spring.application.name}-${server.port}
 
 zuul:
   prefix: /dc #统一的请求前缀
   ignored-services: rest-provider ## 禁用直接使用微服务 多个用 "*"
   routes:
-    dc.serviceId : rest-provider
+    dc.serviceId: rest-provider
     dc.path: /provider/**
 #日志
 logging:
