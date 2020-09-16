@@ -41,21 +41,4 @@ public interface FeignService {
     @RequestMapping(value = "/fileUpload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     String uploadFile(@RequestPart("file") MultipartFile file, @RequestParam("name") String name);
 
-    /**
-     * 改配置不能单独放一个文件中
-
-    @Configuration
-    class MultipartSupportConfig {
-
-        @Autowired
-        private ObjectFactory<HttpMessageConverters> messageConverters;
-
-        @Bean
-        @Primary
-        @Scope("prototype")
-        public Encoder feignEncoder() {
-            return new SpringFormEncoder(new SpringEncoder(messageConverters));
-        }
-    }
-     */
 }
