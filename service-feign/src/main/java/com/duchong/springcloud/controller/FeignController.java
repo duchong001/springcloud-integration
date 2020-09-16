@@ -2,12 +2,11 @@ package com.duchong.springcloud.controller;
 
 import com.duchong.springcloud.pojo.User;
 import com.duchong.springcloud.service.FeignService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.StandardMultipartHttpServletRequest;
 
 import javax.lang.model.element.NestingKind;
 
@@ -16,6 +15,7 @@ import javax.lang.model.element.NestingKind;
  * @since 2019-03-25 16:25
  **/
 @RestController
+@Slf4j
 public class FeignController {
 
     @Autowired
@@ -28,8 +28,9 @@ public class FeignController {
     }
 
     @RequestMapping(value = "/fileUpload")
-    public String fileUpload(@RequestParam("file") MultipartFile file, @RequestParam("name") String name ) {
+    public String fileUpload(@RequestPart("file") MultipartFile file, @RequestParam("name") String name ) {
 
+        log.info("文件上传---fileName---{}",file.getOriginalFilename());
         return feignService.uploadFile(file,name);
     }
 

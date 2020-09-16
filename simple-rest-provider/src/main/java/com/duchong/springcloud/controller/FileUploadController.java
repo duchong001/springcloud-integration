@@ -23,7 +23,7 @@ public class FileUploadController {
 
 
     /***
-     * 上传文件 用@RequestParam注解来指定表单上的file为MultipartFile
+     * 上传文件
      * @param file
      * @return
      */
@@ -41,6 +41,7 @@ public class FileUploadController {
                 e.printStackTrace();
             }
         }
+        log.info("文件上传成功---fileName---{}",file.getOriginalFilename());
         return file.getOriginalFilename();
     }
 }

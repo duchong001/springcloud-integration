@@ -1,5 +1,6 @@
 package com.duchong.springcloud.service;
 
+import com.duchong.springcloud.config.MultipartSupportConfig;
 import com.duchong.springcloud.pojo.User;
 import feign.codec.Encoder;
 import feign.form.spring.SpringFormEncoder;
@@ -19,9 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
-
-@FeignClient(value = "rest-provider",configuration = FeignService.MultipartSupportConfig.class)
+@FeignClient(value = "rest-provider",configuration = MultipartSupportConfig.class)
 public interface FeignService {
 
     /**
@@ -42,7 +41,8 @@ public interface FeignService {
     @RequestMapping(value = "/fileUpload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     String uploadFile(@RequestPart("file") MultipartFile file, @RequestParam("name") String name);
 
-
+    /**
+     * 改配置不能单独放一个文件中
 
     @Configuration
     class MultipartSupportConfig {
@@ -57,4 +57,5 @@ public interface FeignService {
             return new SpringFormEncoder(new SpringEncoder(messageConverters));
         }
     }
+     */
 }
