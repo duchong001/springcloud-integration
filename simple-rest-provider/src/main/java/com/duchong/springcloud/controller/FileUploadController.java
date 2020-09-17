@@ -8,12 +8,10 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 
 /**
  * 文件上传控制器
- *
  * @author DUCHONG
  * @since 2020-09-16 16:10
  **/
